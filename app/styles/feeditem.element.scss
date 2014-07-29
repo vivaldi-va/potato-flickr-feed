@@ -5,9 +5,7 @@ $thumb-height: $thumb-width/1.5;
 .feed-item {
 	display: flex;
 
-	& + .feed-item {
-		border-top: 1px solid $color-lightGrey;
-	}
+	border-bottom: 1px solid $color-lightGrey;
 
 	&-thumbnail-wrapper {
 		width: $thumb-width;
@@ -61,8 +59,8 @@ $thumb-height: $thumb-width/1.5;
 	.feed-item {
 
 		&-thumbnail-wrapper {
-			width: $thumb-width * 1.5;
-			height: $thumb-height * 1.5;
+			width: $thumb-width * 1.25;
+			height: $thumb-height * 1.25;
 		}
 	}
 }
