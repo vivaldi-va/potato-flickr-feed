@@ -10,8 +10,7 @@
 
         <div class="feed-item-body-meta">
             <span class="timestamp">Published: {{ item.published | date:'longDate' }} at {{ item.published | date:'shortTime' }}</span>
-            <a class="author-link" href="http://www.flickr.com/people/{{ item.author_id }}">Photo
-            Author</a>
+            <a class="author-link" href="http://www.flickr.com/people/{{ item.author_id }}">{{ item.author | authorName }}</a>
             <a class="photo-link" href="{{ item.link }}">View on Flickr</a>
         </div>
     </div>
