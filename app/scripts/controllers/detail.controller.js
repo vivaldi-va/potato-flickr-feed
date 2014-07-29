@@ -7,7 +7,7 @@
  * # detail controllers
  */
 angular.module('Potato.Controllers')
-	.controller('DetailCtrl', ['$scope', function($scope) {
-
+	.controller('DetailCtrl', ['$scope', '$rootScope', '$routeParams', function($scope, $rootScope, $routeParams) {
+		$scope.item = $rootScope.items[$routeParams.id];
 	}]);
 
