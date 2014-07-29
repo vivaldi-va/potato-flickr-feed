@@ -1,0 +1,19 @@
+html {
+	font-size: 8px;
+}
+
+body {
+	font: 400 1.6rem/1.5 sans-serif;
+	color: $color-black;
+}
+
+.app-container {
+	overflow: hidden;
+}
+
+
+@media screen and (min-width: 800px) {
+	body {
+		font-family: 'Roboto', sans-serif;
+	}
+}

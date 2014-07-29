@@ -2,17 +2,19 @@
 <html class="no-js">
 <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Potato Flickr Feed</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/normalize-css/normalize.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/app.css">
     <!-- endbuild -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
 </head>
 <body ng-app="Potato">
 <!--[if lt IE 7]>
@@ -25,12 +27,36 @@
     <header class="header">
     </header>
 
-    <div ng-view=""></div>
+    <div id="feed" class="feed" ng-view=""></div>
 
     <footer class="footer"></footer>
 </div>
 
+<script>
 
+    var addEvent = function(elem, type, eventHandle) {
+        if(elem == null ||typeof(elem) == 'undefined') return;
+        if(elem.addEventListener) {
+            elem.addEventListener(type, eventHandle, false);
+        } else if(elem.attachEvent) {
+            elem.attachEvent("on" + type, eventHandle);
+        } else {
+            elem["on" + type] = eventHandle;
+        }
+    };
+
+    function setWindow() {
+        console.log('set window');
+        var container	= document.getElementById('app-container');
+
+        container.style.height = window.innerHeight + 'px';
+    }
+
+    (function() {
+        setWindow();
+        addEvent(window, "resize", setWindow);
+    })();
+</script>
 
 <!-- build:js(.) scripts/oldieshim.js -->
 <!--[if lt IE 9]>
