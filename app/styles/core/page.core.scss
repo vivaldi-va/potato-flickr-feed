@@ -11,6 +11,10 @@ body {
 	overflow: hidden;
 }
 
+.view-wrapper {
+	width: 100%;
+	height: 100%;
+}
 
 @media screen and (min-width: $media-break-tablet) {
 	html {font-size: 10px;}
