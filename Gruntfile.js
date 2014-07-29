@@ -45,8 +45,8 @@ module.exports = function (grunt) {
 				tasks: ['newer:jshint:test', 'karma']
 			},
 			styles: {
-				files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
-				tasks: ['newer:copy:styles', 'autoprefixer']
+				files: ['<%= yeoman.app %>/styles/{,*/}*.scss'],
+				tasks: ['newer:copy:styles', 'sass:dist', 'autoprefixer']
 			},
 			gruntfile: {
 				files: ['Gruntfile.js']
@@ -365,9 +365,20 @@ module.exports = function (grunt) {
 				configFile: 'test/karma.conf.js',
 				singleRun: true
 			}
+		},
+		sass: {
+			dist: {
+				options: {
+					style: 'expanded'
+				},
+				files: {
+					'<%= yeoman.app %>/styles/app.css': '<%= yeoman.app %>/styles/app.scss'
+				}
+			}
 		}
 	});
 
+	grunt.loadNpmTasks('grunt-contrib-sass');
 
 	grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
 		if (target === 'dist') {
@@ -400,6 +411,7 @@ module.exports = function (grunt) {
 	grunt.registerTask('build', [
 		'clean:dist',
 		'wiredep',
+		'sass',
 		'useminPrepare',
 		'concurrent:dist',
 		'autoprefixer',
@@ -413,6 +425,8 @@ module.exports = function (grunt) {
 		'usemin',
 		'htmlmin'
 	]);
+
+	grunt.registerTask('css', ['sass:dist']);
 
 	grunt.registerTask('default', [
 		'newer:jshint',
