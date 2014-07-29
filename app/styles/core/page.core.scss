@@ -3,7 +3,7 @@ html {
 }
 
 body {
-	font: 400 1.6rem/1.5 sans-serif;
+	font: 400 1.6rem/1.5 'Roboto', sans-serif;
 	color: $color-black;
 }
 
@@ -13,6 +13,8 @@ body {
 
 
 @media screen and (min-width: 800px) {
+	html {font-size: 10px;}
+
 	body {
 		font-family: 'Roboto', sans-serif;
 	}
