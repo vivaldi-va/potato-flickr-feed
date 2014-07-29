@@ -46,7 +46,7 @@ module.exports = function (grunt) {
 			},
 			styles: {
 				files: ['<%= yeoman.app %>/styles/{,*/}*.scss'],
-				tasks: ['newer:copy:styles', 'sass:dist', 'autoprefixer']
+				tasks: ['sass:server', 'newer:copy:styles', 'autoprefixer']
 			},
 			gruntfile: {
 				files: ['Gruntfile.js']
@@ -367,6 +367,14 @@ module.exports = function (grunt) {
 			}
 		},
 		sass: {
+			server: {
+				options: {
+					style: 'expanded'
+				},
+				files: {
+					'.tmp/styles/app.css': '<%= yeoman.app %>/styles/app.scss'
+				}
+			},
 			dist: {
 				options: {
 					style: 'expanded'
