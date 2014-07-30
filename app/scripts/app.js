@@ -13,6 +13,7 @@ angular.module('Potato.Config', []);
 angular.module('Potato.Services', []);
 angular.module('Potato.Controllers', []);
 angular.module('Potato.Filters', []);
+angular.module('Potato.Directives', []);
 
 angular
 	.module('Potato', [
@@ -23,6 +24,7 @@ angular
 		'Potato.Config',
 		'Potato.Services',
 		'Potato.Controllers',
-		'Potato.Filters'
+		'Potato.Filters',
+		'Potato.Directives'
 	]);
 

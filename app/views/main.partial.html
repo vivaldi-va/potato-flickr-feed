@@ -1,5 +1,13 @@
+<div class="feed-header">
+    <form class="inline-form results-search-form">
+        <label for="feedSearch">Search</label>
+        <input id="feedSearch" class="input" type="text" ng-model="searchTerm">
+    </form>
+</div>
 <div id="feed" class="feed">
-    <div class="feed-item" ng-repeat="item in items">
+
+
+    <div class="feed-item" ng-repeat="item in items | filter:searchTerm">
         <div class="feed-item-thumbnail-wrapper" ng-click="openItem($index)">
             <img class="feed-item-thumbnail" src="{{ item.media.m }}" alt="{{ item.title }}"/>
         </div>

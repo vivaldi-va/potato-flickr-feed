@@ -1,0 +1,11 @@
+
+.input {
+
+	padding: 0.25em 0.5em;
+
+	border: 1px solid darken($color-white-muted, 10%);
+	background: darken($color-white-muted, 2%);
+	border-radius: 2px;
+
+	color: $color-black;
+}

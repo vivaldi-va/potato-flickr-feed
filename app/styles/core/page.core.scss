@@ -7,6 +7,13 @@ body {
 	color: $color-black;
 }
 
+
+a:hover,
+a:active,
+a:focus {
+	text-decoration: none;
+}
+
 .app-container {
 	overflow: hidden;
 }
