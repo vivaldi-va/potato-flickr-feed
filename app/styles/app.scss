@@ -2,6 +2,9 @@
 @import "core/page.core";
 
 
-@import "feed.block";
+@import "button.element";
 
-@import "feeditem.element";
+@import "feed.block";
+@import "feeditem.block";
+
+@import "detail.block";

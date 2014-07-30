@@ -19,6 +19,7 @@ angular
 		'ngAnimate',
 		'ngResource',
 		'ngRoute',
+		'ngSanitize',
 		'Potato.Config',
 		'Potato.Services',
 		'Potato.Controllers',

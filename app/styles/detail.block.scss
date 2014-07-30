@@ -1,0 +1,61 @@
+
+
+.detail {
+
+	padding: 0 1em;
+
+	& > * {
+		box-sizing: border-box;
+	}
+
+	&-header {
+		display: inline-flex;
+		align-items: center;
+		justify-content: space-between;
+
+		float: left;
+		width: 100%;
+	}
+
+	&-title {
+		font-size: 1.5em;
+	}
+
+	&-back-button {
+		flex-shrink: 0;
+	}
+
+
+	&-meta,
+	&-body {
+		float: left;
+		width: 100%;
+	}
+
+	&-meta {
+		margin: 1.6rem 0 3.2rem;
+	}
+
+	&-body {
+		display: flex;
+	}
+
+	&-thumb-wrapper {
+		flex-shrink: 0;
+	}
+
+	&-content {
+		margin: 0 0 0 1em;
+	}
+
+	&-tag {
+		float: left;
+		margin: 0 0.5em 0 0;
+
+		&:last-of-type {
+			margin: 0;
+		}
+	}
+
+}
+

@@ -1,0 +1,25 @@
+
+.button {
+
+	display: inline-block;
+	padding: 0 0.5em;
+
+	font-size: 1.4rem;
+	line-height: 2em;
+	border-radius: 2px;
+
+	&-default {
+		background: $color-lightGrey;
+		border: 1px solid darken($color-lightGrey, 5%);
+		color: $color-black;
+
+		&:hover,
+		&:focus {
+			border-color: $color-grey;
+		}
+
+		&:active {
+			background: darken($color-lightGrey, 5%);
+		}
+	}
+}

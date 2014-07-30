@@ -1,6 +1,24 @@
-<div class="detail-wrapper">
-    <header>
-        <div class="detail-title">{{ item.title }}</div>
-        <button class="button button-default">back</button>
+<div class="detail">
+    <header class="detail-header">
+        <a class="detail-title" href="{{ item.link }}">{{ item.title }}</a>
+        <button class="button button-default detail-back-button" ng-click="back()">Back</button>
     </header>
+
+    <div class="detail-meta">
+        <a class="detail-meta-author-link" href="http://www.flickr.com/people/{{ item.author_id }}">{{ item.author | authorName }}</a> |
+        <span class="detail-meta-timestamp">Published: {{ item.published | date:'longDate' }} at {{ item.published | date:'shortTime' }}</span>
+    </div>
+
+    <div class="detail-body">
+        <div class="detail-thumb-wrapper">
+            <img class="detail-thumb" src="{{ item.media.m }}" alt="{{ item.title }}">
+        </div>
+
+        <div class="detail-content">
+            <div class="detail-description" ng-bind-html="item.description"></div>
+            <div class="detail-tags">
+                <a class="detail-tag" href="https://www.flickr.com/photos/tags/{{ tag }}/" ng-repeat="tag in tags" target="_blank">{{ tag }}</a>
+            </div>
+        </div>
+    </div>
 </div>

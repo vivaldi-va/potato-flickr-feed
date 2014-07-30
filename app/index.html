@@ -25,6 +25,12 @@
 <!-- Add your site or application content here -->
 <div id="app-container" class="app-container">
     <header class="header">
+        <h1 class="app-title">Flickr Feed</h1>
+
+        <form class="inline-form results-search-form" ng-controller="SearchCtrl">
+            <labal>Search</labal>
+            <input type="text" ng-model="searchTerm">
+        </form>
     </header>
 
     <div class="view-wrapper" ng-view=""></div>
@@ -73,6 +79,7 @@
 <script src="bower_components/angular-resource/angular-resource.js"></script>
 <script src="bower_components/angular-animate/angular-animate.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 
@@ -81,6 +88,7 @@
 <script src="scripts/config/routes.config.js"></script>
 <script src="scripts/services/flickr.service.js"></script>
 <script src="scripts/filters/authorName.filter.js"></script>
+<script src="scripts/filters/descriptionFluffRemover.filter.js"></script>
 <script src="scripts/controllers/main.controller.js"></script>
 <script src="scripts/controllers/detail.controller.js"></script>
 <!-- endbuild -->
