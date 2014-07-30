@@ -358,14 +358,6 @@ module.exports = function (grunt) {
 				'svgmin'
 			]
 		},
-
-		// Test settings
-		karma: {
-			unit: {
-				configFile: 'test/karma.conf.js',
-				singleRun: true
-			}
-		},
 		sass: {
 			server: {
 				options: {
@@ -383,10 +375,19 @@ module.exports = function (grunt) {
 					'<%= yeoman.app %>/styles/app.css': '<%= yeoman.app %>/styles/app.scss'
 				}
 			}
+		},
+		protractor: {
+			test: {
+				options: {
+					configFile: "test/e2e.conf.js", // Target-specific config file
+					args: {} // Target-specific arguments
+				}
+			}
 		}
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-sass');
+	grunt.loadNpmTasks('grunt-protractor-runner');
 
 	grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
 		if (target === 'dist') {
@@ -403,17 +404,12 @@ module.exports = function (grunt) {
 		]);
 	});
 
-	grunt.registerTask('server', 'DEPRECATED TASK. Use the "serve" task instead', function (target) {
-		grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
-		grunt.task.run(['serve:' + target]);
-	});
-
 	grunt.registerTask('test', [
-		'clean:server',
-		'concurrent:test',
-		'autoprefixer',
-		'connect:test',
-		'karma'
+		//'clean:server',
+		//'concurrent:test',
+		//'autoprefixer',
+		//'connect:test',
+		'protractor'
 	]);
 
 	grunt.registerTask('build', [
